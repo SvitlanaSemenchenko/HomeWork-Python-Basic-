@@ -7,7 +7,7 @@ b = x // 100
 x = x % 100
 c = x // 10
 d = x % 10
-# вивод
+# вивід
 print(a)
 print(b)
 print(c)

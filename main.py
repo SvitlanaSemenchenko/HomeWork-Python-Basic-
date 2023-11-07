@@ -1,11 +1,13 @@
-x = int (input("Please enter a 4-digit whole number:  "))
-a = int(x) // 1000
-x = int(x) % 1000
-b = x // 100
+# запит вводу
+x = int (input("Please enter a 5-digit whole number:  "))
+# перевірка
+a = int(x) // 10000
+x = int(x) % 10000
+b = x // 1000
+x = x % 1000
+c = x // 100
 x = x % 100
-c = x // 10
-d = x % 10
-print(a)
-print(b)
-print(c)
-print(d)
+d = x // 10
+e = x % 10
+# вивід
+print(e,d,c,b,a)

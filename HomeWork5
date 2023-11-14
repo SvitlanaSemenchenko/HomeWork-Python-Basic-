@@ -1,0 +1,14 @@
+list = [1, 2, 3, 4, 5]
+if len(list) % 2 == 0 and len(list) != 0:
+    middle = len(list) // 2
+    first_list = list[:middle]
+    second_list = list[middle:]
+elif len(list) % 2 != 0 and len(list) != 0:
+    middle = len(list) // 2
+    first_list = list[:middle + 1]
+    second_list = list[middle + 1:]
+else:
+    first_list = []
+    second_list = []
+print(first_list)
+print(second_list)

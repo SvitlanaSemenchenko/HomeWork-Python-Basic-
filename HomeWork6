@@ -1,0 +1,4 @@
+list = [12, 3, 4, 10, 8]
+if len(list) > 1:
+    list.insert(0, list.pop())
+print(list)

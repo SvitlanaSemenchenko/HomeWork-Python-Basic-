@@ -1,7 +1,8 @@
 def correct_sentence(text):
     if text:
+        text = text[0].capitalize() + text[1:]
         if not text.endswith('.'):
-            text = text.capitalize() + '.'
+            text = text + '.'
 
     return text
 

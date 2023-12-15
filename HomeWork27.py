@@ -26,7 +26,7 @@ class Purchase:
     def add_item(self, item, cnt):
         self.products[item] = cnt
 
-    def calculate_total(self):
+    def get_total(self):
         total = sum(item.price * cnt for item, cnt in self.products.items())
         return total
 
@@ -34,7 +34,7 @@ class Purchase:
         order_info = f"User: {self.user}\nItems:\n"
         for item, cnt in self.products.items():
             order_info += f"{item.name}: {cnt} pcs.\n"
-        order_info += f"Total: {self.calculate_total()}"
+        order_info += f"Total: {self.get_total()}"
         return order_info
 
 lemon = Item('lemon', 5, "yellow", "small")

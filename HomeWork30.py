@@ -16,11 +16,6 @@ class Student(Human):
     def __str__(self):
         return f'{super().__str__()}, Record Book: {self.record_book}'
 
-class TooManyStudentsException(Exception):
-    def __init__(self, message="Cannot add more than 10 students to the group"):
-        self.message = message
-        super().__init__(self.message)
-
 class Group:
     def __init__(self, number):
         self.number = number
@@ -28,7 +23,7 @@ class Group:
 
     def add_student(self, student):
         if len(self.group) >= 10:
-            raise TooManyStudentsException
+            raise ValueError("Cannot add more than 10 students to the group.")
         self.group.add(student)
 
     def delete_student(self, last_name):
@@ -45,6 +40,14 @@ class Group:
     def __str__(self):
         all_students = '\n'.join(str(student) for student in self.group)
         return f'Number:{self.number}\n{all_students}'
+
+try:
+    group = Group("101")
+    for i in range(11):
+            student = Student("Male", 20, f"First{i}", f"Last{i}", f"ID{i}")
+            group.add_student(student)
+except ValueError as ve:
+    print(f"Error: {ve}")
 
 st1 = Student('Male', 30, 'Steve', 'Jobs', 'AN142')
 st2 = Student('Female', 25, 'Liza', 'Taylor', 'AN145')
